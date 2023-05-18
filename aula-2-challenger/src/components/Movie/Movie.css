@@ -1,0 +1,13 @@
+.movie-item {
+  display: block;
+  width: 320px;
+  border: 1px solid #f2f2f2;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.movie-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
