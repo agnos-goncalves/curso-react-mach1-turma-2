@@ -40,3 +40,10 @@
 .read-the-docs {
   color: #888;
 }
+
+.user-admin {
+  background-color: rgb(202, 247, 81);
+}
+.user-client {
+  background-color: rgb(90, 192, 255);
+}

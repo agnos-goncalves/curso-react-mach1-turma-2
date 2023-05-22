@@ -1,35 +1,74 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+/* eslint-disable react/prop-types */
+import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0)
+// function MyComponentStringAndNumber(props) {
+//   return (
+//     <div>
+//       <h4>
+//         {props.name} {props.lastName}
+//       </h4>
+//       <span>
+//         <strong>Idade:</strong> {props.age}
+//       </span>
+//     </div>
+//   );
+// }
 
+function ListUsers(props) {
+  // condicao1 && condicao2 => return
+  // condicao ? return1 : return2
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      {/* {props.active && <h3>Lista Ativa</h3>}
+      {!props.active && <h3>Lista Inativa</h3>} */}
+
+      {props.active ? <h3>Lista Ativa</h3> : <h3>Lista Inativa</h3>}
+      <ul>
+        {props.users.map((obj, index) => (
+          <li
+            key={index}
+            // eslint-disable-next-line react/no-unknown-property
+            isadmin={String(obj.admin)}
+            className={`${obj.admin ? "user-admin" : "user-client"}`}
+          >
+            {/* {obj.admin && <strong>Admin: </strong>} */}
+            {obj.admin ? <strong>Admin: </strong> : <strong>Client: </strong>}
+            {obj.name} {obj.lastName}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
-export default App
+function App() {
+  const listUsers = [
+    {
+      name: "agnos",
+      lastName: "Goncalves",
+      admin: true,
+    },
+    {
+      name: "maria",
+      lastName: "silva",
+      admin: false,
+    },
+    {
+      name: "joao",
+      lastName: "silva",
+      admin: false,
+    },
+    {
+      name: "roberta",
+      lastName: "SR",
+      admin: true,
+    },
+  ];
+  return (
+    <div>
+      <ListUsers users={listUsers} active={false} />
+    </div>
+  );
+}
+
+export default App;
