@@ -1,5 +1,5 @@
 import postimg from "../assets/img/post-1.jpg";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams, useLocation, Link } from "react-router-dom";
 const DataBase = [
   {
     id: 20,
@@ -27,15 +27,20 @@ const DataBase = [
 function Artigo() {
   const { id } = useParams();
   const { pathname } = useLocation();
-  const breacrumb = pathname.split("/");
+  const paths = pathname.split("/").filter((path) => path !== "");
+  let currentPath = "";
+  const nav = paths.map((path) => {
+    currentPath += `/${path}`;
+    return { label: `${path}`, href: currentPath };
+  });
   const artigoAtual = DataBase.find((artigo) => artigo.id == id);
   return (
     <>
-      <nav>
-        {breacrumb.map((r, index) => (
-          <a href={r} key={index}>
-            {r}
-          </a>
+      <nav className="breadcrumb">
+        {nav.map((path) => (
+          <Link key={path.href} to={path.href}>
+            {path.label} /
+          </Link>
         ))}
       </nav>
       <div className="artigo">
