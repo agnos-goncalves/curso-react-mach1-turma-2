@@ -1,6 +1,5 @@
-import { useState } from "react";
 import postimg from "../assets/img/post-1.jpg";
-import { useParams, useLocation, Link } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 const DataBase = [
   {
     id: 20,
@@ -30,7 +29,6 @@ function Artigo() {
   const { pathname } = useLocation();
   const breacrumb = pathname.split("/");
   const artigoAtual = DataBase.find((artigo) => artigo.id == id);
-  console.log(breacrumb);
   return (
     <>
       <nav>
