@@ -1,0 +1,12 @@
+.artigo-list {
+  display: flex;
+  flex-direction: row;
+}
+
+.artigo {
+  width: 700px;
+  margin: 0 auto;
+}
+.artigo img {
+  width: 100%;
+}

@@ -1,0 +1,14 @@
+.artigo-preview {
+  width: 100%;
+  width: 300px;
+  font-size: 12px;
+  border: 1px solid #474747;
+  padding: 10px;
+}
+.artigo-preview img {
+  width: 100%;
+}
+.artigo-preview a {
+  display: block;
+  text-align: right;
+}
