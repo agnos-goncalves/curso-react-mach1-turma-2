@@ -24,16 +24,18 @@ function ArtigoLista() {
     },
   ];
   return (
-    <article className="artigo-list">
-      {artigosData.map((artigo) => (
-        <ArtigoPreview
-          id={artigo.id}
-          titulo={artigo.titulo}
-          conteudo={artigo.conteudo}
-          categoria={artigo.categoria}
-        />
-      ))}
-    </article>
+    <>
+      <article className="artigo-list">
+        {artigosData.map((artigo) => (
+          <ArtigoPreview
+            id={artigo.id}
+            titulo={artigo.titulo}
+            conteudo={artigo.conteudo}
+            categoria={artigo.categoria}
+          />
+        ))}
+      </article>
+    </>
   );
 }
 

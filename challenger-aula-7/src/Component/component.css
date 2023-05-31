@@ -8,5 +8,7 @@
   margin: 0 auto;
 }
 .artigo img {
-  width: 100%;
+  margin: 0 auto;
+  height: 200px;
+  display: block;
 }
