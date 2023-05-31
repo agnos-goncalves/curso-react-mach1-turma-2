@@ -40,3 +40,16 @@
 .read-the-docs {
   color: #888;
 }
+
+header {
+  position: absolute;
+  top: 0;
+  text-align: center;
+  left: 0;
+  background-color: #61dafbaa;
+}
+
+header a {
+  margin: auto 10px;
+  text-align: center;
+}
