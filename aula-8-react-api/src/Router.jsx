@@ -1,14 +1,12 @@
 import { Route, Routes } from "react-router-dom";
-import PagHome from "./Components/PagHome";
-import PagUsuarios from "./Components/PagUsuarios";
-import PagContato from "./Components/PagContatos";
+import UserList from "./Pages/UserList";
+import UserDetail from "./Pages/UserDetail";
 
 function Router() {
   return (
     <Routes>
-      <Route path="/home" element={<PagHome />} />
-      <Route path="/usuarios" element={<PagUsuarios />} />
-      <Route path="/contato" element={<PagContato />} />
+      <Route path="/user" element={<UserList />} />
+      <Route path="/user/:userID" element={<UserDetail />} />
     </Routes>
   );
 }
